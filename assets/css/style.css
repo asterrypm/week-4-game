@@ -15,46 +15,48 @@ body {
 
 }
 
-img:hover { opacity: 0.8; }
-
    
 .jumbotron {
-	color: white;
+	color: blue;
 	text-align: center; 
-	padding: 100px 100px 50px 100px;
+	padding: 100px 100px 25px 100px;
 }
 
 .crystals {
 	height: 200px;
 	width: 200px;
-	padding: 20px;
+	padding: 30px;
 	display: inline;
 	float: left;
 	align-items: center;
 }
 
-/*#images {
+ img  {
+	width: 20%;
+	hover: opacity: .5;
+}    
+
+img:hover { 
+	opacity: 0.8; 
+}
+
+.panels {
+	color: blue;
+	align-items: center;
+}
+
+p {
 	text-align: center;
-}*/
+	color: white;
+}
 
+#subheader {
+	text-align: center;
+	color: white;
+	font-style: bold;
+	outline-style: solid blue;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   img  {
-				width: 20%;
-				hover: opacity: .5;
-
-            	}    
-    
+#randomScore {
+	float: left;
+}

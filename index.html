@@ -18,58 +18,60 @@
                 </div>
             </div>
         
-
-            <div class="row" id="numbers">
-                <div class="col-md-4" id="randomNumber">
-                    <div class="panel panel-primary">
-                    <!-- Random number generated each round -->
-                    <h2>Random Number: <span id="js-random-number">?</span></h2>
-                    </div>
-                
-                    <div class="panel panel-primary">
-                    <!-- Players current score -->
-                    <h2>Score: <span id="js-score">0</span></h2>
-                    </div>
-
-
+                <div class="col-md-4 panels">
                     <div class="panel panel-default">
                       <!-- Default panel contents -->
-                      <div class="panel-heading" >
-                        <h2>Statistics:</h2></div>
-
+                      <div class="panel-heading" id="subheader">
+                        <h2>Let's Play!</h2></div>
+                         <div class="panel-body">
+                            <p>You will be given a random number at the start of the game.<br>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.<br>To win the game, you must match the total score to the random number provided.  If your total score goes above that of the random number, you lose.<br>The value of each crystal is hidden from you until you click on each image.<br>Each time the game starts, the crystals will be assigned new values to keep things interesting!  Have fun and Good luck!</p>
+                          </div>
+                
+                <div class="col-md-4 panels">
                       <!-- Table -->
-                      <table class="table">
+                      <table class="table" id="winsLoses">
                         <!-- Win count -->
-                        <h3>Wins: <span id="js-win-count">0</span></h2>
+                        <h2>Wins: <span id="js-win-count">0</span></h2>
                     
                         <!-- Loss count -->
-                        <h3>Losses: <span id="js-loss-count">0</span></h2>
+                        <h2>Losses: <span id="js-loss-count">0</span></h2>
                       </table>
+                </div>
+                <div class="col-md-4 panels">      
+                      <table class="table" id="randomScore">
+                        <!-- Win count -->
+                         <h2>Random Number: <span id="js-random-number">?</span></h2>
+                    
+                        <!-- Loss count -->
+                        <h2>Score: <span id="js-score">0</span></h2>
+                      </table>
+                </div>
+                </div>
             </div>
 
-        
-                    <div class="row" id="images">
-                          <!-- Crystal 1 -->
-                          <div class="col-md-2.2">
-                            <img class="crystals" id="js-crystal-1" src="assets/images/blue.png" alt="Blue Crystal">
-                          </div>
-                          <div class="col-md-1"></div> <!-- offset -->
-                          <!-- Crystal 2 -->
-                          <div class="col-md-2.2"> <img class="crystals" id="js-crystal-2" src="assets/images/emerald.png" alt="Emerald Crystal">
-                          </div>
-                          <div class="col-md-1"></div> <!-- offset -->
-                          <!-- Crystal 3 -->
-                          <div class="col-md-2.2"> <img class="crystals" id="js-crystal-3" src="assets/images/heart.png" alt="Heart Crystal">
-                          </div>
-                          <div class="col-md-1"></div> <!-- offset -->
-                          <!-- Crystal 4 -->
-                          <div class="col-md-2.2"><img class="crystals" id="js-crystal-4" src="assets/images/ruby.png" alt="Ruby Crystal"></div>
-                    </div>
+            <div class="row" id="images">
+                    <!-- Crystal 1 -->
+                <div class="col-md-2.2">
+                    <img class="crystals" id="js-crystal-1" src="assets/images/blue.png" alt="Blue Crystal">
+                </div>
+                <div class="col-md-1"></div> <!-- offset -->
+                    <!-- Crystal 2 -->
+                <div class="col-md-2.2"> <img class="crystals" id="js-crystal-2" src="assets/images/emerald.png" alt="Emerald Crystal">
+                </div>
+                <div class="col-md-1"></div> <!-- offset -->
+                    <!-- Crystal 3 -->
+                <div class="col-md-2.2"> <img class="crystals" id="js-crystal-3" src="assets/images/heart.png" alt="Heart Crystal">
+                </div>
+                <div class="col-md-1"></div> <!-- offset -->
+                    <!-- Crystal 4 -->
+                <div class="col-md-2.2"><img class="crystals" id="js-crystal-4" src="assets/images/ruby.png" alt="Ruby Crystal"></div>
+                </div>
 
-    
         </div>
         </div> <!-- End Header section -->
+
         <script src="assets/javascript/game.js"></script>
+
     </body>
 </html>
 
