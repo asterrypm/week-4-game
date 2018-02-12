@@ -63,7 +63,7 @@ class Crystal {
 	}
 
 	newPointValue() {
-		this.points = Math.floor((Math.random() * 12) +1);
+		this.pointValue = Math.floor((Math.random() * 12) +1);
 	}
 }
 
