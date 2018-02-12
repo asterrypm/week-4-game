@@ -11,29 +11,29 @@ var gameObject = {
 	//increase wins by one
 	increaseWinCount () {
 		this.winCount++;
-	}
+	},
 
 	//increases losses by one
 	increaseLossCount () {
 		this.lossCount++;
-	}
+	},
 
 	//generate a new random number between 19 - 120
 	newRandomNumber (){
 		this.randomNumber = Math.floor((Math.random() * 102) + 19);
-	}
+	},
 
 	//to calculate score
 	computeScore (points) {
 		this.score += points;
 
-	}
+	},
 
 	//to reset round
 	resetGame () {
 		this.score = 0;
 		this.newRandomNumber();
-	}
+	},
 
 	//Did the user win the game?
 	userWin (){
@@ -42,7 +42,7 @@ var gameObject = {
 		} else {
 			return false;
 		}
-	}
+	},
 
 	//Did the user lose?
 	userLose () {
@@ -100,21 +100,21 @@ var gamePlay = {
 
 	crystal2 () {
 
-		gameObject.score += crystal1.pointValue;
+		gameObject.score += crystal2.pointValue;
 		DOM.execute();
 		this.winLose();
 	},
 
 	crystal3 () {
 
-		gameObject.score += crystal1.pointValue;
+		gameObject.score += crystal3.pointValue;
 		DOM.execute();
 		this.winLose();
 	},
 
 	crystal4 () {
 
-		gameObject.score += crystal1.pointValue;
+		gameObject.score += crystal4.pointValue;
 		DOM.execute();
 		this.winLose();
 	},
@@ -139,14 +139,14 @@ var gamePlay = {
 	},
 
 	playAgain() {
-		gameObject.reset();
+		gameObject.resetGame();
 		crystal1.newPointValue ();
 		crystal2.newPointValue ();
 		crystal3.newPointValue ();
 		crystal4.newPointValue ();
 		DOM.execute();
 	}
-},
+}
 
 
 //push updates to Browser
@@ -176,7 +176,7 @@ $(function() {
 //variable to update the text/html
 
 var DOM = {
-	render () {
+	execute () {
 		$("#random-number").text(gameObject.randomNumber);
 		$("#score").text(gameObject.score);
 		$("#win-count").text(gameObject.winCount);
