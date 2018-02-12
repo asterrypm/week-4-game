@@ -1,11 +1,61 @@
 //variables
 
-var winCount =0;
-var lossCount = 0;
-var randomNumber = 0;
-var score = 0;
+//game object containing various properties and methods to reduce code
+var gameObject = {
 
-//parent class (template for all crystals)
+	winCount: 0,
+	lossCount: 0,
+	randomNumber: 0,
+	score:  0,
+
+	//increase wins by one
+	increaseWinCount () {
+		this.winCount++;
+	}
+
+	//increases losses by one
+	increaseLossCount () {
+		this.lossCount++;
+	}
+
+	//generate a new random number between 19 - 120
+	newRandomNumber (){
+		this.randomNumber = Math.floor((Math.random() * 102) + 19);
+	}
+
+	//to calculate score
+	computeScore (points) {
+		this.score += points;
+
+	}
+
+	//to reset round
+	resetGame () {
+		this.score = 0;
+		this.newRandomNumber();
+	}
+
+	//Did the user win the game?
+	userWin (){
+		if (this.score === this.randomNumber) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	//Did the user lose?
+	userLose () {
+		if (this.score > this.randomNumber){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+};
+
+//creating class and assigning attributes for Crystals parent class (template)
 class Crystal {
 	constructor () {
 		this.pointValue;
@@ -23,57 +73,122 @@ var crystal2 = new Crystal();
 var crystal3 = new Crystal();
 var crystal4 = new Crystal();
 
+//--------------------------------------------------------------------------
+//jquery event listeners
 
-//functions
+//Game play
+	//player clicks crystal
+	//add that crystal point value to the score
+	//test if user won
+		//alert win
+		//increment winCount
+		//reset game
+	//test if the user loss
+		//if user lost
+		//increment lossCount
+		//reset game
+	//reset randomPointValue for each crystal
 
-//increase wins by one
-function increaseWinCount (){
-	winCount++;
-}
+var gamePlay = {
 
-//increases losses by one
-function increaseLossCount (){
-	lossCount++;
-}
+	crystal1 () {
 
-//generate a new random number between 19 - 120
-function newRandomNumber (){
-	randomNumber = Math.floor((Math.random() * 102) + 19);
-}
+		gameObject.score += crystal1.pointValue;
+		DOM.execute();
+		this.winLose();
+	},
 
-//to calculate score
-function computeScore (points) {
-	score += points;
+	crystal2 () {
 
-}
+		gameObject.score += crystal1.pointValue;
+		DOM.execute();
+		this.winLose();
+	},
 
-//to reset round
-function resetGame () {
-	score = 0;
-	newRandomNumber();
-}
+	crystal3 () {
 
-//Did the user win the game?
-function userWin (){
-	if (score === randomNumber) {
-		return true;
-	} else {
-		return false;
+		gameObject.score += crystal1.pointValue;
+		DOM.execute();
+		this.winLose();
+	},
+
+	crystal4 () {
+
+		gameObject.score += crystal1.pointValue;
+		DOM.execute();
+		this.winLose();
+	},
+
+	winLose() {
+		//Did player win?
+		if (gameObject.userWin()) {
+			gameObject.increaseWinCount();
+			DOM.execute();
+			alert("Congratulations!  You win!");
+			this.resetGame();
+			/*if player hasn't won or lose, continue playing*/
+		} else {}
+		//Did player lose?
+		if (gameObject.userLose()) {
+			gameObject.increaseLossCount();
+			DOM.execute;
+			alert("Uh Oh, you lost this one! Try again!");
+			this.resetGame();
+			/*if player hasn't won or lose, continue playing*/
+		} else {}
+	},
+
+	playAgain() {
+		gameObject.reset();
+		crystal1.newPointValue ();
+		crystal2.newPointValue ();
+		crystal3.newPointValue ();
+		crystal4.newPointValue ();
+		DOM.execute();
 	}
-}
+},
 
-//Did the user lose?
-function userLose () {
-	if (score > randomNumber){
-		return true;
-	} else {
-		return false;
+
+//push updates to Browser
+
+// $(document).ready(function() {xxx});
+$(function() {
+
+	gamePlay.playAgain();
+
+	$("#crystal-1").click( function() {
+		gamePlay.crystal1();
+	});
+
+	$("#crystal-2").click( function() {
+		gamePlay.crystal2();
+	});
+
+	$("#crystal-3").click( function() {
+		gamePlay.crystal3();
+	});
+
+	$("#crystal-4").click( function() {
+		gamePlay.crystal4();
+	});
+});
+
+//variable to update the text/html
+
+var DOM = {
+	render () {
+		$("#random-number").text(gameObject.randomNumber);
+		$("#score").text(gameObject.score);
+		$("#win-count").text(gameObject.winCount);
+		$("#loss-count").text(gameObject.lossCount);
 	}
-}
+
+};
 
 
-increaseWinCount();
-increaseLossCount();
+
+
+
 
 
 
