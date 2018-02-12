@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+}
+
+body { 
+
+	background-image: url("../images/dark-triangles.png")
+
+ }
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+	overflow: auto;
+
+}
+
+img:hover { opacity: 0.8; }
+
+   
+.jumbotron {
+	color: white;
+	text-align: center; 
+	padding: 100px 100px 50px 100px;
+}
+
+.crystals {
+	height: 200px;
+	width: 200px;
+	padding: 20px;
+	display: inline;
+	float: left;
+	align-items: center;
+}
+
+/*#images {
+	text-align: center;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   img  {
+				width: 20%;
+				hover: opacity: .5;
+
+            	}    
+    
